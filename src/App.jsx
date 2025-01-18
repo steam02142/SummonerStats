@@ -1,14 +1,19 @@
 import { useState } from 'react'
-import InputForm from './components/input'
+import Home from './Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Starting off</h1>
-      <div className="card">
+    <Router>
+      <div className="App">
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home/>}></Route>
+            
+          </Routes>
+        </div>
       </div>
-      <InputForm/>
-    </>
+    </Router>
     
   )
 }

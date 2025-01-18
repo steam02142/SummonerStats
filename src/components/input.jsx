@@ -11,36 +11,42 @@ function InputForm() {
     const [region, setRegion] = useState('NA');
 
     const handleSubmit = (e) => {
-        
+        console.log("submitted")
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit} className="flex flex-wrap w-1/3 p-10">
-                <label className="flex flex-col pr-4 pb-2">RIOT ID
+        <div className="flex flex-col justify-center items-center">
+            <form className="p-10">
+                <div className="flex gap-3 ">
+                    <label className="flex flex-col pb-2">RIOT ID
                     <input className="outline outline-1"
                         type="text"
                         required
                         value={riotid}
                         onChange={(e)=> setRiotid(e.target.value)}
                     />
-                </label>
-                <label className="flex flex-col">TAGLINE
-                    <input className="outline outline-1" 
-                        type="text"
-                        required 
-                        onChange={(e)=> setTagline(e.target.value)}
-                    />
-                </label>
-                <select
-                    value={region}
-                    onChange={(e)=> setRegion(e.target.value)}
-                >
-                    <option value="NA">NA</option>
-                    <option value="EU">EU</option>
+                    </label>
+                    <label className="flex flex-col">TAGLINE
+                        <input className="outline outline-1" 
+                            type="text"
+                            required 
+                            onChange={(e)=> setTagline(e.target.value)}
+                        />
+                    </label>
+                    <select
+                        value={region}
+                        onChange={(e)=> setRegion(e.target.value)}
+                    >
+                        <option value="NA">NA</option>
+                        <option value="EU">EU</option>
 
-                </select>
-                <button type="button" className="border rounded px-4">Submit</button>
+                    </select>
+                </div>
+                <div className="flex justify-center mt-4">
+                    <button type="button" className="border rounded px-4" onClick={handleSubmit}>
+                        Submit
+                    </button>
+                </div>
             </form>
             <p>{riotid}, {tagline}, {region}</p>
         </div>
