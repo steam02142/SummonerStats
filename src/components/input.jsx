@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 // Steps 
 // 1. https://developer.riotgames.com/apis#account-v1 to get puuid
@@ -10,8 +11,11 @@ function InputForm() {
     const [tagline, setTagline] = useState('');
     const [region, setRegion] = useState('NA');
 
+    const navigate = useNavigate()
+
     const handleSubmit = (e) => {
         console.log("submitted")
+        navigate(`/Profile/${riotid}-${tagline}`)
     }
 
     return (
