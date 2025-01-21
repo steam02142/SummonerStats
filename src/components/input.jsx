@@ -19,35 +19,43 @@ function InputForm() {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center">
-            <form className="p-10">
-                <div className="flex gap-3 ">
-                    <label className="flex flex-col pb-2">RIOT ID
-                    <input className="outline outline-1"
-                        type="text"
-                        required
-                        value={riotid}
-                        onChange={(e)=> setRiotid(e.target.value)}
-                    />
-                    </label>
-                    <label className="flex flex-col">TAGLINE
-                        <input className="outline outline-1" 
-                            type="text"
-                            required 
-                            onChange={(e)=> setTagline(e.target.value)}
-                        />
-                    </label>
-                    <select
-                        value={region}
-                        onChange={(e)=> setRegion(e.target.value)}
-                    >
-                        <option value="NA">NA</option>
-                        <option value="EU">EU</option>
+        <div className="">
+            <form className="">
+                <div className="flex bg-slate-200 justify-center">
+                    <label className="flex flex-col pb-2 text-sm font-medium">Region
+                        <select
+                            value={region}
+                            onChange={(e)=> setRegion(e.target.value)}
+                            className="outline outline-1 outline-slate-400 py-2 px-4 bg-white rounded-l-md h-9"
+                        >
+                            <option value="NA">NA</option>
+                            <option value="EU">EU</option>
 
-                    </select>
+                        </select>
+                    </label>
+                    
+                    <div className="flex">
+                        <label className="flex flex-col pb-2 text-sm font-medium">Game Name
+                        <input className="outline outline-1 outline-slate-400 py-2 px-4 w-72"
+                            type="text"
+                            required
+                            value={riotid}
+                            onChange={(e)=> setRiotid(e.target.value)}
+                        />
+                        </label>
+                    </div>
+                    <div className="flex">
+                        <label className="flex flex-col pb-2 text-sm font-medium">Tagline
+                            <input className="outline outline-1 outline-slate-400 py-2 px-4 w-32 rounded-r-md" 
+                                type="text"
+                                required 
+                                onChange={(e)=> setTagline(e.target.value)}
+                            />
+                        </label>
+                    </div>
                 </div>
                 <div className="flex justify-center mt-4">
-                    <button type="button" className="border rounded px-4" onClick={handleSubmit}>
+                    <button type="submit" className="border rounded px-4 py-1" onClick={handleSubmit}>
                         Submit
                     </button>
                 </div>
