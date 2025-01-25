@@ -9,13 +9,13 @@ import { useNavigate } from 'react-router-dom';
 function InputForm() {
     const [riotid, setRiotid] = useState('');
     const [tagline, setTagline] = useState('');
-    const [region, setRegion] = useState('NA');
+    const [region, setRegion] = useState('americas');
 
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         console.log("submitted")
-        navigate(`/Profile/${riotid}-${tagline}`)
+        navigate(`/Profile/${riotid}-${tagline}-${region}`)
     }
 
     return (
@@ -28,7 +28,7 @@ function InputForm() {
                             onChange={(e)=> setRegion(e.target.value)}
                             className="outline outline-1 outline-slate-400 py-2 px-4 bg-white rounded-l-md h-9"
                         >
-                            <option value="NA">NA</option>
+                            <option value="americas">NA</option>
                             <option value="EU">EU</option>
 
                         </select>
