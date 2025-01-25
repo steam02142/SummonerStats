@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import MatchPreviewCard from './MatchPreview';
+import MatchesList from './MatchesList';
 
 function UserData() {
     const {id} = useParams()
     const [PUUID, setPUUID] = useState(null)
-    const [titleCard, setTitleCard] = useState(null)
+    const [matchData, setMatchData] = useState(null)
 
     const args = id.split("-")
-    console.log(args)
     let riot_id = args[0]
     let tagline = args[1]
     let region = args[2]
-    console.log(riot_id)
 
     useEffect(() => {
         const getPUUID = async () => {
@@ -24,11 +23,31 @@ function UserData() {
         getPUUID();
     }, [riot_id, tagline]); // Run when `riot_id` or `tagline` changes
 
+    useEffect(()=> {
+      if(PUUID) {
+        // console.log("PUUID set " + PUUID)
+      }  
+
+      const getMatchData = async () => {
+        let response = await fetch(`http://127.0.0.1:8000/matches?puuid=${PUUID}&num_matches=10&region=${region}`)
+        let data = await response.json()
+        setMatchData(data)
+      }
+
+      if(PUUID) {
+        getMatchData();
+      } 
+
+    }, [PUUID])
+
+    
+
     return (
         <div>
             <p>Summoner name and tagline: {riot_id} #{tagline} in region {region}</p>
             <p>PUUID: {PUUID}</p>
-            <MatchPreviewCard></MatchPreviewCard>
+            
+            <MatchesList matchData={matchData} />
         </div>
     )
 }
