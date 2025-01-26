@@ -1,7 +1,4 @@
 const MatchPreviewCard = ({matchData}) => {
-
-    console.log(matchData)
-
     const primaryPlayer = matchData.primary_player_stats
     const matchStats = matchData.match_stats
     const allPlayers = matchData.all_players
@@ -34,16 +31,12 @@ const MatchPreviewCard = ({matchData}) => {
 
                     <div >
                         Summoners
-                        <img src={primaryPlayer.summoner1.icon} />
-                        <img src={primaryPlayer.summoner2.icon} />
+
                     </div>
 
                     <div>
                         Items 
-                        <img src={primaryPlayer.item0.icon} />
-                        <img src={primaryPlayer.item1.icon} />
-                        <img src={primaryPlayer.item2.icon} />
-                        <img src={primaryPlayer.item3.icon} />
+
                     </div>
                 </div>
             </div>

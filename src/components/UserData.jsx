@@ -45,8 +45,6 @@ function UserData() {
     return (
         <div>
             <p>Summoner name and tagline: {riot_id} #{tagline} in region {region}</p>
-            <p>PUUID: {PUUID}</p>
-            
             <MatchesList matchData={matchData} />
         </div>
     )

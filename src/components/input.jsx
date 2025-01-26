@@ -21,12 +21,12 @@ function InputForm() {
     return (
         <div className="">
             <form className="">
-                <div className="flex bg-slate-200 justify-center">
+                <div className="flex justify-center">
                     <label className="flex flex-col pb-2 text-sm font-medium">Region
                         <select
                             value={region}
                             onChange={(e)=> setRegion(e.target.value)}
-                            className="outline outline-1 outline-slate-400 py-2 px-4 bg-white rounded-l-md h-9"
+                            className="outline outline-1 outline-slate-400 py-2 px-4 bg-white text-black rounded-l-md h-9"
                         >
                             <option value="americas">NA</option>
                             <option value="EU">EU</option>
@@ -36,7 +36,7 @@ function InputForm() {
                     
                     <div className="flex">
                         <label className="flex flex-col pb-2 text-sm font-medium">Game Name
-                        <input className="outline outline-1 outline-slate-400 py-2 px-4 w-72"
+                        <input className="outline outline-1 outline-slate-400 py-2 px-4 w-72 text-black"
                             type="text"
                             required
                             value={riotid}
@@ -46,7 +46,7 @@ function InputForm() {
                     </div>
                     <div className="flex">
                         <label className="flex flex-col pb-2 text-sm font-medium">Tagline
-                            <input className="outline outline-1 outline-slate-400 py-2 px-4 w-32 rounded-r-md" 
+                            <input className="outline outline-1 outline-slate-400 py-2 px-4 w-32 rounded-r-md text-black" 
                                 type="text"
                                 required 
                                 onChange={(e)=> setTagline(e.target.value)}
@@ -60,7 +60,6 @@ function InputForm() {
                     </button>
                 </div>
             </form>
-            <p>{riotid}, {tagline}, {region}</p>
         </div>
     )
 }
