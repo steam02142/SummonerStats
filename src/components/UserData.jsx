@@ -29,7 +29,7 @@ function UserData() {
       }  
 
       const getMatchData = async () => {
-        let response = await fetch(`http://127.0.0.1:8000/matches?puuid=${PUUID}&num_matches=10&region=${region}`)
+        let response = await fetch(`http://127.0.0.1:8000/matches?puuid=${PUUID}&num_matches=2&region=${region}`)
         let data = await response.json()
         setMatchData(data)
       }
