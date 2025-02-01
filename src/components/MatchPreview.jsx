@@ -1,4 +1,10 @@
-const MatchPreviewCard = ({matchData}) => {
+import { useState } from "react"
+import GoldChart from "./LineChartTest"
+
+
+const MatchPreviewCard = ({matchData, region}) => {
+    const [open, setOpen] = useState(false)
+
     const primaryPlayer = matchData.primary_player_stats
     const matchStats = matchData.match_stats
     const allPlayers = matchData.all_players
@@ -11,6 +17,7 @@ const MatchPreviewCard = ({matchData}) => {
         <p className="font-bold">{teamName}</p>
         {team.map((player) => (
             <div key={player.riotName} className="flex items-center gap-2">
+                    
                 <img 
                     className="size-7"
                     src={player.champion_icon} 
@@ -20,6 +27,7 @@ const MatchPreviewCard = ({matchData}) => {
                 />
                 <p className="truncate w-24">{player.riotName}</p>
             </div>
+
         ))}
     </div>
     );
@@ -62,44 +70,51 @@ const MatchPreviewCard = ({matchData}) => {
     );
 
     return ( 
-        <div className="flex justify-between outline outline-1 p-3">
-            <div>
-                {primaryPlayer.championName}
-                <img
-                    className="outline outline-2 rounded-full size-16"
-                    src={primaryPlayer.champion_icon} />
-            </div>
-
-            <div className="grid">
+        <div>
+            <div className="flex justify-between outline outline-1 p-3" onClick={()=> setOpen(!open)}>
                 <div>
-                    <span>{primaryPlayer.won? 'Victory':'Defeat'} - </span>
-                    <span>{matchStats.gameMode} - </span>
-                    <span>{((matchStats.gameDuration)/60).toFixed(0) + " minutes"}</span>
+                    {primaryPlayer.championName}
+                    <img
+                        className="outline outline-2 rounded-full size-16"
+                        src={primaryPlayer.champion_icon} />
                 </div>
 
-                <div className="flex justify-between">
+                <div className="grid">
                     <div>
-                        <div>K/D/A</div>
-                         <div>{primaryPlayer.kills}/{primaryPlayer.deaths}/{primaryPlayer.assists}</div>
-
+                        <span>{primaryPlayer.won? 'Victory':'Defeat'} - </span>
+                        <span>{matchStats.gameMode} - </span>
+                        <span>{((matchStats.gameDuration)/60).toFixed(0) + " minutes"}</span>
                     </div>
 
-                    <div >
-                        <Summoners></Summoners>
-                    </div>
+                    <div className="flex gap-10">
+                        <div>
+                            <div>K/D/A</div>
+                            <div>{primaryPlayer.kills}/{primaryPlayer.deaths}/{primaryPlayer.assists}</div>
 
-                    <div>
-                        <Items></Items>
+                        </div>
 
+                        <div >
+                            <Summoners></Summoners>
+                        </div>
+
+                        <div>
+                            <Items></Items>
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="flex gap-5 text-sm">
-                <PlayerList team={blueTeam} teamName="Blue Team" />
-                <PlayerList team={redTeam} teamName="Red Team" />
+                <div className="flex gap-5 text-sm">
+                    <PlayerList team={blueTeam} teamName="Blue Team" />
+                    <PlayerList team={redTeam} teamName="Red Team" />
+                </div>
             </div>
-            
+            <div>
+                {open ? 
+                    <GoldChart matchid={matchStats.matchId} region={region} primaryPlayer={primaryPlayer.championName}></GoldChart>
+                    :<></>
+                }
+            </div>
         </div>
     );
 }

@@ -21,6 +21,7 @@ function UserData() {
         };
 
         getPUUID();
+        
     }, [riot_id, tagline]); // Run when `riot_id` or `tagline` changes
 
     useEffect(()=> {
@@ -40,12 +41,10 @@ function UserData() {
 
     }, [PUUID])
 
-    
-
     return (
         <div>
             <p>Summoner name and tagline: {riot_id} #{tagline} in region {region}</p>
-            <MatchesList matchData={matchData} />
+            <MatchesList matchData={matchData} region={region} />
         </div>
     )
 }
