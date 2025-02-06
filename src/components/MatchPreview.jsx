@@ -4,6 +4,10 @@ import GoldChart from "./LineChartTest"
 
 const MatchPreviewCard = ({matchData, region}) => {
     const [open, setOpen] = useState(false)
+    const previewColours = {
+        win: "bg-gradient-to-r from-cyan-500/40 to-blue-500/40",
+        loss: "bg-gradient-to-r from-rose-600/40 to-blue-500/40"
+    }
 
     const primaryPlayer = matchData.primary_player_stats
     const matchStats = matchData.match_stats
@@ -69,9 +73,16 @@ const MatchPreviewCard = ({matchData, region}) => {
     </div>
     );
 
+    
+
     return ( 
-        <div>
-            <div className="flex justify-between outline outline-1 p-3" onClick={()=> setOpen(!open)}>
+        <div className={`mb-4 rounded-md text-white
+                ${primaryPlayer.won?
+                    previewColours.win:
+                    previewColours.loss
+                }`}>
+
+            <div className="flex justify-between outline rounded-md outline-1 p-3" onClick={()=> setOpen(!open)}>
                 <div>
                     {primaryPlayer.championName}
                     <img
@@ -109,7 +120,7 @@ const MatchPreviewCard = ({matchData, region}) => {
                     <PlayerList team={redTeam} teamName="Red Team" />
                 </div>
             </div>
-            <div>
+            <div className="bg-white">
                 {open ? 
                     <GoldChart matchid={matchStats.matchId} region={region} primaryPlayer={primaryPlayer.championName}></GoldChart>
                     :<></>

@@ -43,7 +43,8 @@ function UserData() {
 
     return (
         <div>
-            <p>Summoner name and tagline: {riot_id} #{tagline} in region {region}</p>
+            <h2 className="text-white text-3xl font-bold">{riot_id}#{tagline}</h2>
+            <p className="text-white">Region: {region}</p>
             <MatchesList matchData={matchData} region={region} />
         </div>
     )
