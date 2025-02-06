@@ -6,20 +6,18 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 function App() {
   return (
     <Router>
-      <div className="App min-h-screen flex justify-center bg-cover bg-[url('/garen-background.webp')] text-gray-800">
-        <div className="content max-w-4xl w-full">
-          <Routes>
-            <Route 
-              path="/" 
-              element={<Home/>}>
-            </Route>
-            <Route 
-              path="/profile/:id" 
-              element={<Profile/>}>
-            </Route>
+      <div className="App min-h-screen flex justify-center text-gray-800">
+        <Routes>
+          <Route 
+            path="/" 
+            element={<Home/>}>
+          </Route>
+          <Route 
+            path="/profile/:id" 
+            element={<Profile/>}>
+          </Route>
 
-          </Routes>
-        </div>
+        </Routes>
       </div>
     </Router>
     
