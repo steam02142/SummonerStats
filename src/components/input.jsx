@@ -58,7 +58,10 @@ function InputForm() {
                     </div>
                 </div>
                 <div className="flex justify-center mt-4">
-                    <button type="submit" className="border rounded px-4 py-1" onClick={handleSubmit}>
+                    <button 
+                        type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105" 
+                        onClick={handleSubmit}
+                    >    
                         Submit
                     </button>
                 </div>

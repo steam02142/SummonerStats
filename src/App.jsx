@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 function App() {
   return (
     <Router>
-      <div className="App min-h-screen flex justify-center bg-gradient-to-br from-[#667db6] via-[#0082c8] to-[#667db6]  text-gray-800">
+      <div className="App min-h-screen flex justify-center bg-cover bg-[url('/garen-background.webp')] text-gray-800">
         <div className="content max-w-4xl w-full">
           <Routes>
             <Route 
