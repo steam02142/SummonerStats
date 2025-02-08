@@ -27,7 +27,7 @@ const MatchPreviewCard = ({matchData, region}) => {
                 }`}
                 onClick={()=> setOpen(!open)}>
 
-            <div className="flex justify-between outline rounded-md outline-1 p-3" >
+            <div className="flex justify-between outline rounded-md outline-1 px-10 py-5" >
 
                 <LeftSection primaryPlayer={primaryPlayer} matchStats={matchStats}></LeftSection>
 
