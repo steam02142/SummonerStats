@@ -3,6 +3,7 @@ import GoldChart from "./LineChartTest"
 import LeftSection from "./match preview components/LeftSection"
 import MiddleSection from "./match preview components/MiddleSection"
 import RightSection from "./match preview components/RightSection"
+import ExtraMatchData from "./ExtraMatchData"
 
 
 const MatchPreviewCard = ({matchData, region}) => {
@@ -25,9 +26,9 @@ const MatchPreviewCard = ({matchData, region}) => {
                     previewColours.win:
                     previewColours.loss
                 }`}
-                onClick={()=> setOpen(!open)}>
+                >
 
-            <div className="flex justify-between outline rounded-md outline-1 px-10 py-5" >
+            <div className="flex justify-between outline rounded-md outline-1 px-10 py-5 " onClick={()=> setOpen(!open)}>
 
                 <LeftSection primaryPlayer={primaryPlayer} matchStats={matchStats}></LeftSection>
 
@@ -35,11 +36,18 @@ const MatchPreviewCard = ({matchData, region}) => {
 
                 <RightSection blueTeam={blueTeam} redTeam={redTeam}></RightSection>
             </div>
-            <div className="bg-white">
-                {open ? 
-                    <GoldChart matchid={matchStats.matchId} region={region} primaryPlayer={primaryPlayer.championName}></GoldChart>
+            <div>
+                {open?
+                    <ExtraMatchData primaryPlayer={primaryPlayer} blueTeam={blueTeam} redTeam={redTeam} backgroundColours={previewColours}></ExtraMatchData>
                     :<></>
                 }
+                
+            </div>
+            <div className="bg-white">
+                {/* {open ? 
+                    <GoldChart matchid={matchStats.matchId} region={region} primaryPlayer={primaryPlayer.championName}></GoldChart>
+                    :<></>
+                } */}
             </div>
         </div>
     );

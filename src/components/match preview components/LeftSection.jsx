@@ -12,7 +12,7 @@ const LeftSection = ({primaryPlayer, matchStats}) => {
                         src={primaryPlayer.champion_icon} />
                 </div>
                 <div className="pt-2 pl-2">
-                    <Summoners primaryPlayer={primaryPlayer}></Summoners>
+                    <Summoners primaryPlayer={primaryPlayer} size={6}></Summoners>
                 </div>
             </div>
             <h3 className="text-md font-semibold pt-4">{matchStats.gameMode}</h3>
