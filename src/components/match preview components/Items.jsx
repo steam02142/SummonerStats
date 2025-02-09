@@ -1,10 +1,10 @@
-const Items = ({primaryPlayer}) => {
+const Items = ({primaryPlayer, size}) => {
     return (  
         <div className="grid grid-cols-3 gap-1 items-center">
             {primaryPlayer.items.map((item, index) => {
                 if(item != null) {
                 return (
-                <div key={index} className="size-9">
+                <div key={index} className={`${size}`}>
                     {/* Title adds the tooltip */}
                     <img 
                         className="rounded-md"
@@ -16,7 +16,7 @@ const Items = ({primaryPlayer}) => {
                 )
                 } else {
                     return (
-                        <div className="size-9 bg-gray-900/70 rounded-md"></div>
+                        <div className={`${size} bg-gray-900/70 rounded-md`}></div>
                     )
                 }
             })}
