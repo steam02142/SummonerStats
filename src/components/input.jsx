@@ -22,40 +22,46 @@ function InputForm() {
         <div className="">
             <form className="">
                 <div className="flex justify-center">
-                    <label className="flex flex-col pb-2 text-sm font-medium">Region
+                    <div>
                         <select
                             value={region}
                             onChange={(e)=> setRegion(e.target.value)}
-                            className="outline outline-1 outline-slate-400 py-2 px-4 bg-white text-black rounded-l-md h-9"
+                            className="outline outline-1 outline-slate-400 py-3 bg-l px-4 bg-white text-black rounded-l-md h-12"
                         >
                             <option value="americas">NA</option>
-                            <option value="EU">EU</option>
-
+                            <option value="europe">EU</option>
+                            <option value="asia">AS</option>
                         </select>
-                    </label>
+                    </div>
+
                     
                     <div className="flex">
-                        <label className="flex flex-col pb-2 text-sm font-medium">Game Name
-                        <input className="outline outline-1 outline-slate-400 py-2 px-4 w-72 text-black"
+
+                        <input className="outline outline-1 outline-slate-400 py-3 px-4 w-72 text-black"
                             type="text"
                             required
                             value={riotid}
                             onChange={(e)=> setRiotid(e.target.value)}
+                            placeholder="Search Summoner"
                         />
-                        </label>
+
                     </div>
                     <div className="flex">
-                        <label className="flex flex-col pb-2 text-sm font-medium">Tagline
-                            <input className="outline outline-1 outline-slate-400 py-2 px-4 w-32 rounded-r-md text-black" 
+
+                            <input className="outline outline-1 outline-slate-400 py-3 px-4 w-32 rounded-r-md text-black" 
                                 type="text"
                                 required 
                                 onChange={(e)=> setTagline(e.target.value)}
+                                placeholder="Tagline"
                             />
-                        </label>
+
                     </div>
                 </div>
                 <div className="flex justify-center mt-4">
-                    <button type="submit" className="border rounded px-4 py-1" onClick={handleSubmit}>
+                    <button 
+                        type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105" 
+                        onClick={handleSubmit}
+                    >    
                         Submit
                     </button>
                 </div>

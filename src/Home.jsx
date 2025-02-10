@@ -2,22 +2,11 @@ import InputForm from './components/input'
 
 function Home() {
     return (
-        <div>
-            <h2 className="mt-3 mb-14">
-            <span className="block text-4xl font-bold text-cyan-500">
-                Welcome
-            </span>
-            <span className="block mt-2 text-lg font-medium text-gray-700">
-                <span className="bg-yellow-100 px-2 py-1 rounded-lg">Please enter</span> 
-                 your 
-                <span className="bg-pink-100 px-2 py-1 rounded-lg">username</span> 
-                and 
-                <span className="bg-green-100 px-2 py-1 rounded-lg">tagline</span>.
-            </span>
-            </h2>
-
-            <InputForm></InputForm>
-
+        <div className="min-h-screen w-full flex justify-center bg-cover bg-[url('/garen-background.webp')] relative">
+            <div className="content max-w-4xl absolute top-1/3">
+                <h1 className="text-5xl font-bold text-gray-200 text-center mb-16">SummonerStats</h1>
+                <InputForm></InputForm>
+            </div>
         </div>
     )
 }
