@@ -5,7 +5,7 @@ const Summoners = ({primaryPlayer, size}) => {
                 <div key={index} className="flex items-center">
                     {/* Title adds the tooltip */}
                     <img 
-                        className={`size-${size} rounded-md`}
+                        className={`${size} rounded-md`}
                         src={summoner.icon}  
                         loading="lazy"
                         title={summoner.name}
