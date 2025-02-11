@@ -1,9 +1,9 @@
 import { useState } from "react"
-import GoldChart from "./LineChartTest"
-import LeftSection from "./match preview components/LeftSection"
-import MiddleSection from "./match preview components/MiddleSection"
-import RightSection from "./match preview components/RightSection"
-import ExtraMatchData from "./ExtraMatchData"
+import GoldChart from "./extraMatchData/LineChartTest"
+import LeftSection from "./matchPreviewComponents/LeftSection"
+import MiddleSection from "./matchPreviewComponents/MiddleSection"
+import RightSection from "./matchPreviewComponents/RightSection"
+import ExtraMatchData from "./extraMatchData/ExtraMatchData"
 
 
 const MatchPreviewCard = ({matchData, region}) => {
@@ -40,6 +40,7 @@ const MatchPreviewCard = ({matchData, region}) => {
                 {open?
                     <ExtraMatchData primaryPlayer={primaryPlayer} blueTeam={blueTeam} redTeam={redTeam} backgroundColours={previewColours}></ExtraMatchData>
                     :<></>
+                   
                 }
                 
             </div>

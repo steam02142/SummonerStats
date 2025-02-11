@@ -1,5 +1,5 @@
-import Items from "./match preview components/Items";
-import Summoners from "./match preview components/Summoners";
+import Items from "../matchPreviewComponents/Items";
+import Summoners from "../matchPreviewComponents/Summoners";
 
 const ExtraMatchDataRow = ({primaryPlayer, players, team, backgroundColours}) => {
     let primaryPlayerOnTeam = players.find((player)=>player.riotName == primaryPlayer.riotName)
