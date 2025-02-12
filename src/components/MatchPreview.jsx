@@ -21,14 +21,14 @@ const MatchPreviewCard = ({matchData, region}) => {
     const redTeam = allPlayers.slice(5, 10)
 
     return ( 
-        <div className={`mb-4 rounded-md text-white 
+        <div className={`mb-4 rounded-md text-white outline outline-1
                 ${primaryPlayer.won?
                     previewColours.win:
                     previewColours.loss
                 }`}
                 >
 
-            <div className="flex justify-between outline rounded-md outline-1 px-10 py-5 " onClick={()=> setOpen(!open)}>
+            <div className="flex justify-between rounded-md outline-1 px-10 py-5 " onClick={()=> setOpen(!open)}>
 
                 <LeftSection primaryPlayer={primaryPlayer} matchStats={matchStats}></LeftSection>
 
