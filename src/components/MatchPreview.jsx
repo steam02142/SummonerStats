@@ -38,7 +38,8 @@ const MatchPreviewCard = ({matchData, region}) => {
             </div>
             <div>
                 {open?
-                    <ExtraMatchData primaryPlayer={primaryPlayer} blueTeam={blueTeam} redTeam={redTeam} backgroundColours={previewColours}></ExtraMatchData>
+                    <ExtraMatchData primaryPlayer={primaryPlayer} blueTeam={blueTeam} redTeam={redTeam} backgroundColours={previewColours}
+                                    matchid={matchStats.matchId} region={region}></ExtraMatchData>
                     :<></>
                    
                 }
