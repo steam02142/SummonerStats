@@ -19,7 +19,9 @@ const ExtraMatchData = ({primaryPlayer, blueTeam, redTeam, backgroundColours, ma
         return (
             <div className="bg-[#1B2335]">
                 <InformationSelector selected={selected} setSelected={setSelected}></InformationSelector>
-                <div className={`${primaryPlayer.won ? backgroundColours.win : backgroundColours.loss} py-2`}>
+                <div 
+                    className={`${primaryPlayer.won ? backgroundColours.win : backgroundColours.loss} 
+                                py-2 flex justify-center`}>
                     <GoldChart matchid={matchid} region={region} primaryPlayer={primaryPlayer.championName}></GoldChart>
                 </div>
                 

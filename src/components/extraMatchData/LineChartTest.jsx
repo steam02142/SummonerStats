@@ -41,8 +41,8 @@ const GoldChart = ({matchid, region, primaryPlayer}) => {
 
   return ( 
     <LineChart
-      width={730}
-      height={250}
+      width={630}
+      height={450}
       data={matchData}
       margin={{ top: 5, right: 30, left: 20, bottom: 15 }}
     >
@@ -59,7 +59,7 @@ const GoldChart = ({matchid, region, primaryPlayer}) => {
 
       {
         allChampions.map((champ, index)=>{
-          return (<Line hide={!activeChamps.includes(champ)} type="monotone" dataKey={champ} stroke={colours[index]} dot={false} />)
+          return (<Line hide={!activeChamps.includes(champ)} type="monotone" dataKey={champ} stroke={colours[index]} strokeWidth={2} dot={false} />)
         })
       }
 
