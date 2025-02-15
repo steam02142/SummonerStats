@@ -47,12 +47,15 @@ function UserData() {
 
     return (
         <div>
-            <h2 className="text-white text-3xl font-bold">{riot_id}#{tagline}</h2>
-            <div className="flex pb-3 align-bottom">
-              <img src={profileIcon} alt="" className="size-24 rounded-full border border-white" />
-              <p className="text-white">Region: {region}</p>
+            <div className="flex py-3">
+              <div className="flex align-bottom">
+                <img src={profileIcon} alt="" className="size-24 border border-white" />
+              </div>
+              <h2 className="text-white text-3xl font-bold pl-2 pt-2">{riot_id}#{tagline}</h2>
             </div>
             
+
+            <h3 className="text-white text-2xl font-bold pb-2">Match History</h3>            
 
             <MatchesList matchData={matchData} region={region} />
         </div>
