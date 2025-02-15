@@ -2,9 +2,11 @@ import { useState } from "react";
 import ExtraMatchDataRow from "./ExtraMatchDataRow";
 import InformationSelector from "./InformationSelector";
 import GoldChart from "./LineChartTest";
+import GraphSelector from "./GraphSelector";
 
 const ExtraMatchData = ({primaryPlayer, blueTeam, redTeam, backgroundColours, matchid, region}) => {
     const [selected, setSelected] = useState("Scoreboard")
+    const [chartType, setChartType] = useState("totalGold")
 
     return (  
         <div className="bg-[#1B2335]">
@@ -17,11 +19,14 @@ const ExtraMatchData = ({primaryPlayer, blueTeam, redTeam, backgroundColours, ma
             }
 
             {selected === "Graphs" &&
-                <div 
-                className={`${primaryPlayer.won ? backgroundColours.win : backgroundColours.loss} 
-                            py-2 flex justify-center`}>
-                <GoldChart matchid={matchid} region={region} primaryPlayer={primaryPlayer.championName}></GoldChart>
-            </div>
+                <div>
+                    <GraphSelector chartType={chartType} setChartType={setChartType}></GraphSelector>
+                    <div 
+                        className={`${primaryPlayer.won ? backgroundColours.win : backgroundColours.loss} 
+                                    py-2 flex justify-center`}>
+                        <GoldChart matchid={matchid} region={region} primaryPlayer={primaryPlayer.championName} chartType={chartType}></GoldChart>
+                    </div>
+                </div>
             }
         </div>  
     );
