@@ -6,6 +6,7 @@ import GoldChart from "./LineChartTest";
 const ExtraMatchData = ({primaryPlayer, blueTeam, redTeam, backgroundColours, matchid, region}) => {
     const [selected, setSelected] = useState("Scoreboard")
 
+
     if (selected == "Scoreboard") {
         return (  
             <div className="bg-[#1B2335]">
@@ -18,7 +19,10 @@ const ExtraMatchData = ({primaryPlayer, blueTeam, redTeam, backgroundColours, ma
         return (
             <div className="bg-[#1B2335]">
                 <InformationSelector selected={selected} setSelected={setSelected}></InformationSelector>
-                <GoldChart matchid={matchid} region={region} primaryPlayer={primaryPlayer.championName}></GoldChart>
+                <div className={`${primaryPlayer.won ? backgroundColours.win : backgroundColours.loss} py-2`}>
+                    <GoldChart matchid={matchid} region={region} primaryPlayer={primaryPlayer.championName}></GoldChart>
+                </div>
+                
             </div>
         );
     }

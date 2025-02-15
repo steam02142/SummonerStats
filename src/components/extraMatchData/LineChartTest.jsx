@@ -47,9 +47,12 @@ const GoldChart = ({matchid, region, primaryPlayer}) => {
       margin={{ top: 5, right: 30, left: 20, bottom: 15 }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="minute" />
-      <YAxis />
-      <Tooltip />
+      <XAxis dataKey="minute" stroke="#FFFFFFCC" />
+      <YAxis stroke="#FFFFFFCC" />
+      <Tooltip 
+          contentStyle={{ backgroundColor: '#1B2335', border: '1px solid #ddd', color: 'white' }} 
+          labelFormatter={(value) => `Minute ${value}`}
+      />
       <Legend height={36} iconType="circle" onClick={props => handleClick(props.dataKey)} />
       {/* <Line hide={!activeChamps.includes("Garen")} type="monotone" dataKey="Garen" stroke="#8884d8" /> */}
       {/* <Line type="monotone" dataKey="Senna" stroke="#4084d8" /> */}
