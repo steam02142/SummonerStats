@@ -1,6 +1,6 @@
 const GraphSelector = ({chartType, setChartType}) => {
     return (  
-        <div className="flex justify-between px-24 bg-[#2a3551]">
+        <div className="flex justify-between px-24 bg-slate-800">
             <button 
                 className={`grow my-1 mx-10 border-blue-500 ${chartType == "totalGold"? "border-b-2": ""}`}  
                 onClick={() => setChartType("totalGold")}>
