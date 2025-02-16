@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ExtraMatchDataRow from "./ExtraMatchDataRow";
 import InformationSelector from "./InformationSelector";
-import GoldChart from "./LineChartTest";
+import TimelineChart from "./TimelineChart";
 import GraphSelector from "./GraphSelector";
 
 const ExtraMatchData = ({primaryPlayer, blueTeam, redTeam, backgroundColours, matchid, region}) => {
@@ -24,7 +24,7 @@ const ExtraMatchData = ({primaryPlayer, blueTeam, redTeam, backgroundColours, ma
                     <div 
                         className={`${primaryPlayer.won ? backgroundColours.win : backgroundColours.loss} 
                                     py-2 flex justify-center`}>
-                        <GoldChart matchid={matchid} region={region} primaryPlayer={primaryPlayer.championName} chartType={chartType}></GoldChart>
+                        <TimelineChart matchid={matchid} region={region} primaryPlayer={primaryPlayer.championName} chartType={chartType}></TimelineChart>
                     </div>
                 </div>
             }

@@ -54,8 +54,6 @@ const TimelineChart = ({matchid, region, primaryPlayer, chartType}) => {
           labelFormatter={(value) => `Minute ${value}`}
       />
       <Legend height={36} iconType="circle" onClick={props => handleClick(props.dataKey)} />
-      {/* <Line hide={!activeChamps.includes("Garen")} type="monotone" dataKey="Garen" stroke="#8884d8" /> */}
-      {/* <Line type="monotone" dataKey="Senna" stroke="#4084d8" /> */}
 
       {
         allChampions.map((champ, index)=>{

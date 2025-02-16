@@ -1,5 +1,4 @@
 import { useState } from "react"
-import GoldChart from "./extraMatchData/LineChartTest"
 import LeftSection from "./matchPreviewComponents/LeftSection"
 import MiddleSection from "./matchPreviewComponents/MiddleSection"
 import RightSection from "./matchPreviewComponents/RightSection"
@@ -28,7 +27,7 @@ const MatchPreviewCard = ({matchData, region}) => {
                 }`}
                 >
 
-            <div className="flex justify-between rounded-md outline-1 px-10 py-5 " onClick={()=> setOpen(!open)}>
+            <div className="flex justify-between rounded-md outline-1 px-10 py-5 cursor-pointer hover:bg-black/10" onClick={()=> setOpen(!open)}>
 
                 <LeftSection primaryPlayer={primaryPlayer} matchStats={matchStats}></LeftSection>
 
@@ -44,12 +43,6 @@ const MatchPreviewCard = ({matchData, region}) => {
                    
                 }
                 
-            </div>
-            <div className="bg-white">
-                {/* {open ? 
-                    <GoldChart matchid={matchStats.matchId} region={region} primaryPlayer={primaryPlayer.championName}></GoldChart>
-                    :<></>
-                } */}
             </div>
         </div>
     );

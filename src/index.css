@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.recharts-legend-item {
+  @apply cursor-pointer;
+}
+
+.recharts-legend-item:hover span {
+  @apply text-blue-400;
+}
