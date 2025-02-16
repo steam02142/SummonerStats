@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend} from "recharts";
 
-const GoldChart = ({matchid, region, primaryPlayer, chartType}) => {
+const TimelineChart = ({matchid, region, primaryPlayer, chartType}) => {
   const [matchData, setMatchData] = useState(null)
   const [activeChamps, setActiveChamps] = useState([primaryPlayer])
   const colours = ["#FF5733", "#33B5FF", "#8E44AD", "#FFC300", "#2ECC71", "#FF6347", "#F39C12", "#1F77B4", "#9B59B6", "#3498DB"];
@@ -67,4 +67,4 @@ const GoldChart = ({matchid, region, primaryPlayer, chartType}) => {
   );
 }
  
-export default GoldChart;
+export default TimelineChart;
