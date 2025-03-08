@@ -30,7 +30,7 @@ const ExtraMatchDataRow = ({primaryPlayer, players, team, backgroundColours}) =>
                         <div key={index} className="flex items-center text-white/80 p-1">
                             <div className="flex p-2 items-center w-1/4">
                                 <img src={player.champion_icon} className="size-9" />
-                                <Summoners primaryPlayer={player} size={"size-4"}></Summoners>
+                                <Summoners primaryPlayer={player} size={"size-4"} showName={false}></Summoners>
                                 <div>
                                     <h2 className={`font-bold ${player.riotName == primaryPlayer.riotName? "text-amber-300" : "text-white"}`}>
                                         {player.riotName}

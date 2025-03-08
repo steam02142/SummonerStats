@@ -1,8 +1,8 @@
-const Summoners = ({primaryPlayer, size}) => {
+const Summoners = ({primaryPlayer, size, showName}) => {
     return ( 
         <div className="grid gap-1">
             {primaryPlayer.summoners.map((summoner, index) => (
-                <div key={index} className="flex items-center">
+                <div key={index} className="flex items-center pr-1">
                     {/* Title adds the tooltip */}
                     <img 
                         className={`${size} rounded-md`}
@@ -10,7 +10,10 @@ const Summoners = ({primaryPlayer, size}) => {
                         loading="lazy"
                         title={summoner.name}
                     />
-                    <span className="pl-1">{summoner.name}</span>
+
+                    {
+                        showName && <span>{summoner.name}</span>
+                    }
                 </div>
             ))}
         </div>
