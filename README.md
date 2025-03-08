@@ -8,16 +8,16 @@ Visit the live demo [here]() <-- to be added and use your own user name or try i
 **Tagline**: 1112
 
 ## Screenshots
-Homepage \
+**Homepage** \
 ![Homepage](https://github.com/steam02142/SummonerStats/blob/main/img/Home.png)
 
-Match History \
+**Match History** \
 ![Match History](https://github.com/steam02142/SummonerStats/blob/main/img/Match%20Cards.png)
 
-Expanded Match History \
+**Expanded Match History** \
 ![Expanded Match History](https://github.com/steam02142/SummonerStats/blob/main/img/Match%20Cards%20Expanded.png)
 
-Match Data Graph \
+**Match Data Graph** \
 ![Match Data Graph](https://github.com/steam02142/SummonerStats/blob/main/img/Graphs.png)
 
 ## Installation
