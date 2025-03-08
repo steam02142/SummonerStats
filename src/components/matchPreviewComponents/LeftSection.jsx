@@ -2,7 +2,7 @@ import Summoners from "./Summoners";
 
 const LeftSection = ({primaryPlayer, matchStats}) => {
     return ( 
-        <div className="pr-0">
+        <div className="pr-0 w-56">
             <span className="text-lg font-bold">{primaryPlayer.championName} - </span>
             <span className="text-lg">{primaryPlayer.won? 'Victory':'Defeat'}</span>
             <div className="flex pt-2">

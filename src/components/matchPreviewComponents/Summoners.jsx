@@ -10,6 +10,7 @@ const Summoners = ({primaryPlayer, size}) => {
                         loading="lazy"
                         title={summoner.name}
                     />
+                    <span className="pl-1">{summoner.name}</span>
                 </div>
             ))}
         </div>

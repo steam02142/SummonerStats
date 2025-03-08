@@ -26,9 +26,10 @@ const MatchPreviewCard = ({matchData, region}) => {
                     previewColours.loss
                 }`}
                 >
-
+            
+            
             <div className="flex justify-between rounded-md outline-1 px-10 py-5 cursor-pointer hover:bg-black/10" onClick={()=> setOpen(!open)}>
-
+                
                 <LeftSection primaryPlayer={primaryPlayer} matchStats={matchStats}></LeftSection>
 
                 <MiddleSection primaryPlayer={primaryPlayer}></MiddleSection>

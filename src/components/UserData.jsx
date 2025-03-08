@@ -27,7 +27,7 @@ function UserData() {
 
     useEffect(()=> { 
       const getMatchData = async () => {
-        let response = await fetch(`http://127.0.0.1:8000/matches?puuid=${PUUID}&num_matches=6&region=${region}`)
+        let response = await fetch(`http://127.0.0.1:8000/matches?puuid=${PUUID}&num_matches=10&region=${region}`)
         let data = await response.json()
         setMatchData(data)
       }
@@ -54,9 +54,7 @@ function UserData() {
               <h2 className="text-white text-3xl font-bold pl-2 pt-2">{riot_id}#{tagline}</h2>
             </div>
             
-
             <h3 className="text-white text-2xl font-bold pb-2">Match History</h3>            
-
             <MatchesList matchData={matchData} region={region} />
         </div>
     )
