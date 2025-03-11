@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <Router basename="/SummonerStats/">
+    <Router basename="/">
       <div className="App min-h-screen flex justify-center text-gray-800">
         <Routes>
           <Route 
