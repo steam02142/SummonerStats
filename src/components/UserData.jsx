@@ -16,7 +16,7 @@ function UserData() {
 
     useEffect(() => {
         const getPUUID = async () => {
-        let response = await fetch(`http://64.23.226.14:8000/puuid?riot_id=${riot_id}&tagline=${tagline}&region=${region}`);
+        let response = await fetch(`https://summoner-stats.duckdns.org/puuid?riot_id=${riot_id}&tagline=${tagline}&region=${region}`);
         let data = await response.json();
         setPUUID(data["puuid"]);
         };
@@ -27,13 +27,13 @@ function UserData() {
 
     useEffect(()=> { 
       const getMatchData = async () => {
-        let response = await fetch(`http://64.23.226.14:8000/matches?puuid=${PUUID}&num_matches=10&region=${region}`)
+        let response = await fetch(`https://summoner-stats.duckdns.org/matches?puuid=${PUUID}&num_matches=10&region=${region}`)
         let data = await response.json()
         setMatchData(data)
       }
 
       const getProfileIcon = async () => {
-        let response = await fetch(`http://64.23.226.14:8000/profileIcon?puuid=${PUUID}`)
+        let response = await fetch(`https://summoner-stats.duckdns.org/profileIcon?puuid=${PUUID}`)
         let data = await response.json()
         setProfileIcon(data)
       }

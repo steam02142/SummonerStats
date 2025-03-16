@@ -9,7 +9,7 @@ const TimelineChart = ({matchid, region, primaryPlayer, chartType}) => {
   // Retrieve chart data
   useEffect(() => {
     const getMatchData = async () => {
-      let response = await fetch(`http://127.0.0.1:8000/timeline?matchid=${matchid}&region=${region}`);
+      let response = await fetch(`https://summoner-stats.duckdns.org/timeline?matchid=${matchid}&region=${region}`);
       let data = await response.json();
       // setMatchData(matchData["puuid"]);
       setMatchData(data)
