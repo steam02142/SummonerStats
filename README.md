@@ -3,7 +3,7 @@
 SummonerStats is a League of Legends match history website built with React. It uses [SummonerStats API](https://github.com/steam02142/SummonerStatsAPI) to fetch and display user data.
 
 ## Demo
-Visit the live demo [here]() <-- to be added and use your own user name or try it out with\
+Visit the live demo [here](summoner-stats.vercel.app) and use your own username, or use mine:
 **Summoner**: Wumpus  
 **Tagline**: 1112
 
